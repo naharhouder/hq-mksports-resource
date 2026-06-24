@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简明指南 · 爱游戏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f2f2f2;
+            color: #2c2c2c;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .page {
+            max-width: 780px;
+            width: 100%;
+        }
+
+        /* hero 区 - 简洁，不喧宾夺主 */
+        .hero {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 450;
+            letter-spacing: -0.02em;
+            color: #1e1e1e;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .sub {
+            color: #666;
+            font-size: 0.95rem;
+            font-weight: 350;
+            border-left: 3px solid #b0b0b0;
+            padding-left: 1rem;
+            margin-top: 0.3rem;
+        }
+
+        /* 卡片系统 —— 浅灰背景、细边框、柔和阴影 */
+        .card {
+            background: #fafafa;
+            border: 1px solid #e3e3e3;
+            border-radius: 14px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.03);
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04), 0 6px 18px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: #222;
+            letter-spacing: -0.01em;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 0.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 380;
+            margin: 1.4rem 0 0.6rem;
+            color: #333;
+        }
+
+        .card p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .inset-quote {
+            background: #f0f0f0;
+            border-left: 3px solid #bdbdbd;
+            padding: 0.9rem 1.2rem;
+            margin: 1.2rem 0;
+            border-radius: 0 8px 8px 0;
+            color: #3a3a3a;
+            font-style: normal;
+            font-size: 0.95rem;
+        }
+
+        .inset-quote strong {
+            font-weight: 500;
+            color: #1e1e1e;
+        }
+
+        a {
+            color: #3b6ea5;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+
+        a:hover {
+            border-bottom-color: #3b6ea5;
+        }
+
+        /* 场景／小提示列表 */
+        .mini-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0.2rem;
+        }
+
+        .mini-list li {
+            margin-bottom: 0.65rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .mini-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #8a8a8a;
+            font-weight: 700;
+        }
+
+        .note-tag {
+            display: inline-block;
+            background: #eaeaea;
+            border-radius: 20px;
+            padding: 0.2rem 0.75rem;
+            font-size: 0.8rem;
+            color: #444;
+            margin-right: 0.3rem;
+        }
+
+        .faq-item {
+            margin-top: 1.2rem;
+        }
+
+        .faq-item .q {
+            font-weight: 450;
+            margin-bottom: 0.25rem;
+            color: #222;
+        }
+
+        .faq-item .a {
+            color: #4a4a4a;
+            padding-left: 0.8rem;
+            border-left: 1px solid #d6d6d6;
+            margin-top: 0.1rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 3rem;
+            border-top: 1px solid #ddd;
+            padding-top: 1.5rem;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 550px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .card {
+                padding: 1.4rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero 简洁标题 + 导语 -->
+    <div class="hero">
+        <h1>爱游戏 · 一种简明指南</h1>
+        <div class="sub">梳理使用前需要了解的几件事，以及访问时的小提醒。</div>
+    </div>
+
+    <!-- 第一张卡片：开篇 + 引用提示 -->
+    <div class="card">
+        <p>对于偶尔想找些娱乐内容的人来说，<a href="https://onlinesite-igame.com">爱游戏</a>算是一个比较直接的站点。它不绕弯子，也不堆砌复杂的导航，更像是一个轻量的集合。</p>
+        <p>这篇笔记会从几个基础角度出发，说说它大致是什么样的、可以怎么用，以及访问时最好留意的细节。如果你已经用过类似站点，下面的内容也许只是帮你确认一些印象。</p>
+        <div class="inset-quote">
+            <strong>提示：</strong> 无论使用什么平台，保持对网址和环境的留意总是值得的。下面会提到几个具体方面。
+        </div>
+    </div>
+
+    <!-- 第二张卡片：特点 / 简明介绍 -->
+    <div class="card">
+        <h2>它看起来像什么</h2>
+        <p>从结构上说，<a href="https://onlinesite-igame.com">爱游戏</a> 的首页往往直接展示分类或推荐条目，没有太多中间页。你不需要层层跳转，就能看到主要的内容块。</p>
+        <p>它给我的感觉是：把重点放在“呈现”上，而不是“引导”。对一部分人来说这很友好，因为不用花精力去搞懂布局逻辑。但对另一部分人，尤其是刚开始接触这类站点的用户，可能会希望有更清晰的路径说明——所以下面加了一条简单的场景归纳。</p>
+
+        <h3>几个常见使用场景</h3>
+        <ul class="mini-list">
+            <li>快速浏览当天或者近期更新的内容，就像翻看一个公告栏。</li>
+            <li>根据分类标签寻找某一个方向的信息，比如特定题材或类型。</li>
+            <li>单纯想随便看看，没有明确目标，这时候首页的陈列可能正好合适。</li>
+        </ul>
+        <p style="margin-top: 0.6rem;">当然，每个人的使用习惯不同，找到自己顺手的方式就好。</p>
+    </div>
+
+    <!-- 第三张卡片：访问提醒 / 细节指南 -->
+    <div class="card">
+        <h2>访问时的小提醒</h2>
+        <p>以下几条是基于一般网络使用经验整理的，不算什么深奥的道理，但偶尔会有人忽略。</p>
+        <ul class="mini-list">
+            <li><span class="note-tag">链接</span> 当你在站内看到跳转链接的时候，留意一下目标地址是否和当前网站一致。这倒不是针对某个站点，而是通用的习惯。</li>
+            <li><span class="note-tag">环境</span> 尽量使用自己信任的设备与网络去访问。公共环境里用完记得退出登录（如果站点有账户机制的话）。</li>
+            <li><span class="note-tag">内容</span> 站点上的信息大多由用户或整理者提交，留意发布时间和来源标注，能帮你判断时效性。</li>
+        </ul>
+        <div class="inset-quote">
+            <strong>引用一句老话：</strong> 网络很大，保持一点常识和谨慎，会让体验顺畅很多。
+        </div>
+    </div>
+
+    <!-- 第四张卡片：FAQ 摘要风格 (提问+简短回答) -->
+    <div class="card">
+        <h2>几个常被问到的点</h2>
+
+        <div class="faq-item">
+            <div class="q">这个站点需要注册才能用吗？</div>
+            <div class="a">大部分浏览功能是公开的，不需要注册。不过如果涉及收藏或互动类的功能，可能会要求登录。具体可以打开 <a href="https://onlinesite-igame.com">爱游戏</a> 看一眼右上角或底部说明。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">页面加载慢，通常是什么原因？</div>
+            <div class="a">可能和网络环境有关，也可能是某些内容资源（如图片、外部脚本）的加载延迟。尝试刷新一次，或者稍后再试。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">移动端上显示正常吗？</div>
+            <div class="a">目前来看，它在手机浏览器上会自适应布局，卡片和文字会重新排列，阅读体验没有太大问题。</div>
+        </div>
+
+        <p style="margin-top: 1.2rem; font-size: 0.95rem; color: #555;">如果你还有其他疑问，最简单的办法就是直接打开站点看一看，很多印象来自实际体验。</p>
+    </div>
+
+    <!-- 第五张卡片：一个普通的结尾 + 再次自然嵌入链接 -->
+    <div class="card" style="text-align: left;">
+        <p>写到最后，想起一个朋友曾经说，任何工具或站点，只有真正去用了才会形成自己的判断。所以这篇指南的作用顶多是提供几条路标，不至于让你一开始完全摸不着方向。</p>
+        <p style="margin-bottom: 0;">如果你还没打开过 <a href="https://onlinesite-igame.com">爱游戏</a>，不妨花几分钟看看它的首页长什么样。也许它恰好符合你的预期，也许不是——但至少你亲自确认过了。</p>
+    </div>
+
+    <div class="footer-note">
+        一份很普通的指南 · 仅供示意
+    </div>
+
+</div>
+</body>
+</html>
